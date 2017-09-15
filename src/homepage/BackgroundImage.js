@@ -6,7 +6,7 @@ export default class BackgroundImage extends Component {
     render() {
         return (
             <Image
-            source={require('./src/images/mic.jpg')}
+            source={require('../images/mic.jpg')}
             style={styles.backgroundImage}
             >
                     {this.props.children}

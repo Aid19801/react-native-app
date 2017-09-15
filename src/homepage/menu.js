@@ -1,18 +1,56 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Text, View, Alert } from 'react-native';
+import styles from './menuStyles.js';
 
-class Menu extends React.Component {
+class Menu extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
-    return (
-      <View style={{flex: 0.5, flexDirection: 'column'}}>
-         <View style={{width: 250, height: 50, backgroundColor: 'powderblue'}}>
-          <Text>GIGS</Text>
+
+    const { navigate } = this.props;
+
+    return(
+
+      <View style={styles.menuContainer}>
+
+         <View
+          style={styles.menuItemContainer}
+          >
+            <Text
+              style={styles.text}
+              onPress={() => navigate('Gigs')}
+            >
+            GIGS
+            </Text>
+
          </View>
 
-         <View style={{width: 250, height: 50, backgroundColor: 'skyblue'}} />
-         <View style={{width: 250, height: 50, backgroundColor: 'steelblue'}} />
+         <View
+          style={styles.menuItemContainer}
+          >
+            <Text
+              style={styles.text}
+              onPress={() => navigate('Acts')}
+            >
+            ACTS
+            </Text>
+         </View>
+
+         <View
+          style={styles.menuItemContainer}
+          >
+            <Text
+              style={styles.text}
+              onPress={() => navigate('News')}
+            >
+            NEWS
+            </Text>
+         </View>
+
        </View>
-    );
+    )
   }
 }
 

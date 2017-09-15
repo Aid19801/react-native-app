@@ -1,15 +1,32 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import styles from './styles.js';
-import Menu from './menu';
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
 
-class HomePage extends React.Component {
+import Menu from './menu';
+import BackgroundImage from './BackgroundImage';
+import styles from './styles.js';
+
+class HomePage extends Component {
+
+  static navigationOptions = {
+    title: 'OPEN MIC',
+  };
+
   render() {
+
+    const { navigate } = this.props.navigation;
+
     return (
-      <View style={styles.container}>
-        <Text style={styles.pageTitle}>HOME</Text>
-        <Menu />
-      </View>
+
+      <BackgroundImage>
+
+        <View style={styles.appContainer}>
+
+            <Menu navigate={navigate} />
+
+        </View>
+
+      </BackgroundImage>
+
     );
   }
 }

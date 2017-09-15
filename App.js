@@ -1,29 +1,19 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
+// pages imported for navigation.
+// HomePage is basically just the menu.
 import HomePage from './src/homepage/homepage';
-import BackgroundImage from './BackgroundImage';
-import styles from './styles.js';
+import GigsPage from './src/gigspage/gigspage';
+import ActsPage from './src/actspage/actspage';
+import NewsPage from './src/newspage/newspage';
 
-
-class App extends Component {
-  render() {
-    return (
-      <BackgroundImage>
-
-        <View style={styles.appContainer}>
-
-            <View style={styles.titleContainer}>
-              <Text style={styles.title}>OPEN MIC</Text>
-            </View>
-
-            <HomePage />
-
-        </View>
-
-      </BackgroundImage>
-    );
-  }
-}
+const App = StackNavigator({
+  Home: { screen: HomePage },
+  Gigs: { screen: GigsPage },
+  Acts: { screen: ActsPage },
+  News: { screen: NewsPage }
+})
 
 export default App;

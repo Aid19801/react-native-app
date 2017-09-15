@@ -10,10 +10,11 @@ import ActsPage from './src/actspage/actspage';
 import NewsPage from './src/newspage/newspage';
 
 const App = StackNavigator({
-  Home: { screen: HomePage },
+  Home: { screen: GigsPage },
   Gigs: { screen: GigsPage },
   Acts: { screen: ActsPage },
   News: { screen: NewsPage }
 })
 
+// change GIGS PAGE BACK TO HOMEPAGE
 export default App;

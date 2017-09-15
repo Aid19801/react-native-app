@@ -1,23 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default class App extends React.Component {
+import HomePage from './src/homepage/homepage';
+import BackgroundImage from './BackgroundImage';
+import styles from './styles.js';
+
+
+class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <BackgroundImage>
+
+        <View style={styles.appContainer}>
+
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>OPEN MIC</Text>
+            </View>
+
+            <HomePage />
+
+        </View>
+
+      </BackgroundImage>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;

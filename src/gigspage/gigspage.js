@@ -8,58 +8,69 @@ import styles from './styles.js';
 
 class GigsPage extends Component {
 
-  constructor() {
-    super();
-
-    this.state = {
-      today: 'BEFORE'
-    }
-
-  }
-
   static navigationOptions = {
     title: 'GIGS',
   };
 
 
-  getDayOfWeek() {
+  shuffleDays() {
+    console.log('props: ', this.props);
+    let arr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    let today = new Date().toString().slice(0, 3);
 
-    let d = new Date();
-    let i = d.getDay().toString();
-
-    let daysOfWeek = {
-      0: 'Sunday',
-      1: 'Monday',
-      2: 'Tuesday',
-      3: 'Wednesday',
-      4: 'Thursday',
-      5: 'Friday',
-      6: 'Saturday'
+    switch (today) {
+        case 'Sun':
+            arr = arr;
+            break;
+        case 'Mon':
+            arr = ['Tonight', 'Tomorrow', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            N;
+        case 'Tue':
+            arr = ['Tonight', 'Tomorrow', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'];
+            break;
+        case 'Wed':
+            arr = ['Tonight', 'Tomorrow', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue'];
+            break;
+        case 'Thu':
+            arr = ['Tonight', 'Tomorrow', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed'];
+            break;
+        case 'Fri':
+            arr = ['Tonight', 'Tomorrow', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu'];
+            break;
+        case 'Sat':
+            arr = ['Tonight', 'Tomorrow', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
     }
-    return daysOfWeek[i];
+
+    return arr;
   }
 
-
-
-  componentDidMount() {
-    let day = this.getDayOfWeek();
-
-    this.setState({
-      today: day
-    })
-
-    console.log('CDM: ', day);
+  getDayTitle() {
+    let d = new Date().toString();
+    let e = d.slice(0, 3);
+    return e;
   }
 
   render() {
+
+    let arrayOfDays = this.shuffleDays();
+
     return (
       <BackgroundImage>
 
         <View style={styles.appContainer}>
 
-           <Text style={styles.title}>{this.state.today}</Text>
+           <Text style={styles.title}>{this.getDayTitle()}</Text>
 
-           <Grid />
+           <Grid
+            gridItems={arrayOfDays}
+            navigate={this.props.navigation}
+            />
+
+            <View>
+              <Text style={styles.title}>
+                I am Results
+              </Text>
+            </View>
 
          </View>
       </BackgroundImage>

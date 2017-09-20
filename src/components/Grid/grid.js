@@ -1,23 +1,42 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, SectionList, TouchableOpacity } from 'react-native';
 
 import styles from './styles.js';
 
 
 class Grid extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
   }
 
   render() {
+
+    const { gridItems, navigate } = this.props;
+
     return (
       <View style={styles.gridContainer}>
-        <View style={styles.textContainer}>
-          <Text style={styles.text}>
-            I am Grid View
-          </Text>
-        </View>
+
+          {this.props.gridItems.map((each, i) =>
+
+          <TouchableOpacity
+            key={i}
+            style={styles.textContainer}
+            onPress={() => navigate('ResultsPage')}
+            >
+            <View>
+                <Text style={styles.text}>
+                  {each}
+                </Text>
+            </View>
+          </TouchableOpacity>
+
+          )}
+
       </View>
+
+
+
     )
   }
 }

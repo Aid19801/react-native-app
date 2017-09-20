@@ -12,7 +12,8 @@ class Grid extends Component {
 
   render() {
 
-    const { gridItems, navigate } = this.props;
+    const { gridItems } = this.props;
+    let nav = this.props.navigate.navigate;
 
     return (
       <View style={styles.gridContainer}>
@@ -22,7 +23,7 @@ class Grid extends Component {
           <TouchableOpacity
             key={i}
             style={styles.textContainer}
-            onPress={() => navigate('ResultsPage')}
+            onPress={() => nav('ResultsPage', { results: each })}
             >
             <View>
                 <Text style={styles.text}>

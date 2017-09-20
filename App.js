@@ -9,7 +9,7 @@ import NewsPage from './src/newspage/newspage';
 import ResultsPage from './src/resultspage/resultspage';
 
 const App = StackNavigator({
-  Home: { screen: HomePage },
+  Home: { screen: GigsPage },
   Gigs: { screen: GigsPage },
   Acts: { screen: ActsPage },
   News: { screen: NewsPage },

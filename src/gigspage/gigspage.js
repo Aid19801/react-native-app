@@ -66,12 +66,6 @@ class GigsPage extends Component {
             navigate={this.props.navigation}
             />
 
-            <View>
-              <Text style={styles.title}>
-                I am Results
-              </Text>
-            </View>
-
          </View>
       </BackgroundImage>
     )

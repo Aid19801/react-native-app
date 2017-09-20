@@ -4,15 +4,23 @@ import styles from './styles.js';
 
 class ResultsPage extends Component {
 
-  static navigationOptions = {
-    title: 'RESULTS',
-  };
+  constructor(props) {
+    super(props)
+  }
+
+  static navigationOptions = ({ navigation }) => ({
+    title: `${navigation.state.params.results}`,
+  });
 
   render() {
+
+    const { name } = this.props;
+    const { params } = this.props.navigation.state;
+
     return (
       <View style={styles.menuContainer}>
 
-         <Text>I AM results</Text>
+         <Text>I AM {params.results}</Text>
 
        </View>
     )

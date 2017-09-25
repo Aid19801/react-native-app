@@ -10,7 +10,6 @@ class Menu extends Component {
   render() {
 
     const { navigate } = this.props;
-    console.log('MENU PROPS: ', navigate);
 
     return(
 

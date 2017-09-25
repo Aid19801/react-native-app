@@ -22,6 +22,12 @@
     "expo": "^20.0.0",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.47.0",
-    "react-navigation": "^1.0.0-beta.11"
+    "react-navigation": "^1.0.0-beta.11",
+
+    "ejs": "latest",
+    "aws-sdk": "latest",
+    "express": "latest",
+    "body-parser": "latest",
+    "mysql": "latest"
   }
 }

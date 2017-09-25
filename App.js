@@ -6,14 +6,18 @@ import HomePage from './src/homepage/homepage';
 import GigsPage from './src/gigspage/gigspage';
 import ActsPage from './src/actspage/actspage';
 import NewsPage from './src/newspage/newspage';
-import ResultsPage from './src/resultspage/resultspage';
+import GridThrough from './src/gridthrough/gridthrough';
+import InfoPane from './src/infopane/infopane';
 
+// basic navigation
+// need to change home to being homepage again
 const App = StackNavigator({
-  Home: { screen: GigsPage },
+  Home: { screen: InfoPane },
   Gigs: { screen: GigsPage },
   Acts: { screen: ActsPage },
   News: { screen: NewsPage },
-  ResultsPage: { screen: ResultsPage },
+  GridThrough: { screen: GridThrough },
+  InfoPane: { screen: InfoPane },
 })
 
 export default App;

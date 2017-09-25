@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 
 import Menu from './menu';
-import BackgroundImage from './BackgroundImage';
+import BackgroundImage from '../components/backgroundimage/backgroundImage';
+
 import styles from './styles.js';
 
 class HomePage extends Component {

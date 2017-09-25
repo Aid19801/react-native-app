@@ -3,6 +3,9 @@ import { Text, View, SectionList, TouchableOpacity } from 'react-native';
 
 import styles from './styles.js';
 
+// Grid maps through the gridItems & returns a
+// TouchableOpacity / Text component for each arr element.
+// clicking on them returns a ResultsPage component.
 
 class Grid extends Component {
   constructor(props) {
@@ -23,13 +26,15 @@ class Grid extends Component {
           <TouchableOpacity
             key={i}
             style={styles.textContainer}
-            onPress={() => nav('ResultsPage', { results: each })}
+            onPress={() => nav('GridThrough', { clickedItem: each })}
             >
+
             <View>
                 <Text style={styles.text}>
                   {each}
                 </Text>
             </View>
+
           </TouchableOpacity>
 
           )}

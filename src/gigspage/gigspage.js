@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Text, View, Alert } from 'react-native';
 
-import BackgroundImage from './BackgroundImage';
-import Grid from '../components/Grid/grid';
+import BackgroundImage from '../components/backgroundimage/backgroundImage';
+import Grid from '../components/grid/grid';
 import styles from './styles.js';
 
 
@@ -13,18 +13,17 @@ class GigsPage extends Component {
   };
 
 
+  // shuffleDays returns a new arr depending on today.
   shuffleDays() {
-    console.log('props: ', this.props);
     let arr = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     let today = new Date().toString().slice(0, 3);
-
     switch (today) {
         case 'Sun':
             arr = arr;
             break;
         case 'Mon':
             arr = ['Tonight', 'Tomorrow', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-            N;
+            break;
         case 'Tue':
             arr = ['Tonight', 'Tomorrow', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon'];
             break;
@@ -40,10 +39,10 @@ class GigsPage extends Component {
         case 'Sat':
             arr = ['Tonight', 'Tomorrow', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
     }
-
     return arr;
   }
 
+  // getDayTitle creates the 'MON' or 'THU' at top of app.
   getDayTitle() {
     let d = new Date().toString();
     let e = d.slice(0, 3);
@@ -53,6 +52,7 @@ class GigsPage extends Component {
   render() {
 
     let arrayOfDays = this.shuffleDays();
+    const { navigation } = this.props;
 
     return (
       <BackgroundImage>
@@ -63,10 +63,11 @@ class GigsPage extends Component {
 
            <Grid
             gridItems={arrayOfDays}
-            navigate={this.props.navigation}
+            navigate={navigation}
             />
 
          </View>
+
       </BackgroundImage>
     )
   }

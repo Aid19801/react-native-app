@@ -1,0 +1,3 @@
+rootProject.name = 'Open_Mic'
+
+include ':app'

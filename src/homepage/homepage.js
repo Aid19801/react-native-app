@@ -21,6 +21,7 @@ class HomePage extends Component {
       <BackgroundImage>
 
         <View style={styles.appContainer}>
+          <Text style={styles.title}>HOME</Text>
 
             <Menu navigate={navigate} />
 

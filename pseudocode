@@ -1,0 +1,34 @@
+        # __React Native App__
+
+* app.js
+provider - takes in store.
+
+* homePage
+title - Title
+onLoad - menuReducer populates gridItems with menu items.
+
+  * gigsDaysPage
+  switchCase - to show 'Today', 'Tomorrow', 'Friday' etc.
+  onLoad - daysReducer, populates gridItems with days
+
+    * gigsPage
+    onLoad - gigsReducer, populates gridItems with gignames
+
+      * selectedGig
+      onLoad - clicks through to infoPane with gig details.
+      gridItems -
+
+
+        # __ReUsable Components__
+Title
+InfoPane
+GridItems
+
+
+        # __JSON-Server__
+mon, tue, wed etc endpoints.
+
+
+        # __CMS__
+wordpress
+changes push to json-server, app reads from json server.

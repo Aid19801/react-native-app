@@ -7,44 +7,29 @@ import styles from './styles.js';
 // TouchableOpacity / Text component for each arr element.
 // clicking on them returns a ResultsPage component.
 
-class Grid extends Component {
-  constructor(props) {
-    super(props);
+const Grid = (props) => (
 
-  }
+  <View style={styles.gridContainer}>
 
-  render() {
+      {props.gridItems.map((each, i) =>
 
-    const { gridItems } = this.props;
-    let nav = this.props.navigate.navigate;
+      <TouchableOpacity
+        key={i}
+        style={styles.textContainer}
+        onPress={() => props.navigate.navigate('GridThrough', { clickedItem: each })}
+        >
 
-    return (
-      <View style={styles.gridContainer}>
+          <View>
+              <Text style={styles.text}>
+                {each}
+              </Text>
+          </View>
 
-          {this.props.gridItems.map((each, i) =>
+      </TouchableOpacity>
 
-          <TouchableOpacity
-            key={i}
-            style={styles.textContainer}
-            onPress={() => nav('GridThrough', { clickedItem: each })}
-            >
+      )}
 
-            <View>
-                <Text style={styles.text}>
-                  {each}
-                </Text>
-            </View>
-
-          </TouchableOpacity>
-
-          )}
-
-      </View>
-
-
-
-    )
-  }
-}
+  </View>
+)
 
 export default Grid;

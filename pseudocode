@@ -27,8 +27,18 @@ GridItems
 
         # __JSON-Server__
 mon, tue, wed etc endpoints.
+Add in MC'd by:
+Walk-Ins
+Promoter
+External Link
+Nearest Tube
 
 
         # __CMS__
 wordpress
 changes push to json-server, app reads from json server.
+
+"express": "latest",
+"mysql": "latest",
+"body-parser": "latest",
+"ejs": "latest",

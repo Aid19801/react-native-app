@@ -14,7 +14,7 @@ import InfoPane from './src/infopane/infopane';
 // basic navigation
 // need to change home to being homepage again
 const AppContainer = StackNavigator({
-  Home: { screen: HomePage },
+  Home: { screen: GigsPage },
   Gigs: { screen: GigsPage },
   GridThrough: { screen: GridThrough },
   InfoPane: { screen: InfoPane },

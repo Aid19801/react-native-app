@@ -9,7 +9,7 @@ import styles from './styles.js';
 class HomePage extends Component {
 
   static navigationOptions = {
-    title: 'OPEN MIC',
+    title: 'Open_Mic',
   };
 
   render() {

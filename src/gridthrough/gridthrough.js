@@ -13,7 +13,7 @@ class GridThrough extends Component {
     super(props)
 
     this.state = {
-      gigs: ['Loading...']
+      gigs: []
     }
   }
 
@@ -65,13 +65,13 @@ class GridThrough extends Component {
     fetch(`https://open-mic-api.herokuapp.com/${day}`)
       .then(result => result.json())
       .then(json => {
-        console.log('json uubb:', json);
         this.setState({
           gigs: json
         })
       })
       .catch(err => console.log('fetch gigs error: ', err));
   }
+
 
   render() {
     const { params } = this.props.navigation.state;
@@ -83,28 +83,25 @@ class GridThrough extends Component {
 
            <Text style={styles.title}>{params.clickedItem}</Text>
 
-
-
-
            <View style={styles.gridContainer}>
 
-               {this.state.gigs.map((each, i) =>
+           {this.state.gigs.map((each, i) =>
 
-               <TouchableOpacity
-                 key={i}
-                 style={styles.textContainer}
-                 onPress={() => navigate('InfoPane', { clickedItem: each })}
-                 >
+           <TouchableOpacity
+             key={i}
+             style={styles.textContainer}
+             onPress={() => navigate('InfoPane', { clickedItem: each })}
+             >
 
-                 <View>
-                     <Text style={styles.text}>
-                       {each.gig}
-                     </Text>
-                 </View>
+             <View>
+                 <Text style={styles.text}>
+                   {each.gig}
+                 </Text>
+             </View>
 
-               </TouchableOpacity>
+           </TouchableOpacity>
+           )}
 
-               )}
 
            </View>
 

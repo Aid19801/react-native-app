@@ -9,7 +9,7 @@ import styles from './styles.js';
 class HomePage extends Component {
 
   static navigationOptions = {
-    title: 'OPEN MIC',
+    title: 'Open_Mic',
   };
 
   render() {
@@ -21,6 +21,7 @@ class HomePage extends Component {
       <BackgroundImage>
 
         <View style={styles.appContainer}>
+          <Text style={styles.title}>HOME</Text>
 
             <Menu navigate={navigate} />
 

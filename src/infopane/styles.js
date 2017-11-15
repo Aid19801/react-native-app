@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontFamily: 'Courier New',
       backgroundColor: 'rgba(0,0,0,0.5)',
-      paddingTop: 4,
+      paddingTop: 7,
       borderWidth: 1,
       borderColor: 'grey',
       width: '100%',
@@ -44,6 +44,23 @@ const styles = StyleSheet.create({
       color: 'white',
       fontFamily: 'Courier New',
       fontWeight: 'bold'
+    },
+    bringerText: {
+      color: 'grey',
+      fontFamily: 'Courier New',
+      fontWeight: 'bold',
+      paddingTop: '2%'
+    },
+    gigInfoNormal: {
+      color: 'white',
+      fontFamily: 'Courier New',
+      fontWeight: 'bold'
+    },
+    gigInfoBold: {
+      color: 'white',
+      fontFamily: 'Courier New',
+      fontWeight: 'bold',
+      paddingTop: '2%'
     }
 });
 

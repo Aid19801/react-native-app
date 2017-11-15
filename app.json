@@ -1,5 +1,14 @@
 {
   "expo": {
-    "sdkVersion": "20.0.0"
+    "name": "Open_Mic",
+    "slug": "open-mic",
+    "sdkVersion": "21.0.0",
+    "privacy": "public",
+    "icon": "./src/images/Open_Mic_Logo.png",
+    "loading": {
+      "icon": "./src/images/Open_Mic_Logo.png",
+      "backgroundColor": "#D3D3D3",
+      "hideExponentText": true
+    }
   }
 }

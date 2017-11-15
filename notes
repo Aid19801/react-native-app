@@ -1,0 +1,36 @@
+i) lowerCase the dayOfWeek
+2) process the API data to ONLY that day.
+3)
+
+
+
+           {gigs.map((each, i) =>
+
+           <TouchableOpacity
+             key={i}
+             style={styles.textContainer}
+             onPress={() => nav('GigsPage', { clickedItem: each, dayOfWeek: dayOfWeek })}
+             >
+
+             <View>
+                 <Text style={styles.text}>
+                   {each.gig}
+                 </Text>
+             </View>
+
+           </TouchableOpacity>
+
+
+
+         )}
+
+CURRENT STATUS
+i) we have results showing
+ii) but the results that were populating grid
+were the 'today!' kind of day. NOT the clickedItem kind
+of day.
+
+NEXT STEPS
+Maybe re-plan containers and components.
+GIGS > would pass two props (today, selectedDay, Api Data.)
+GIG DAY > filter Api data, based on selectedDay

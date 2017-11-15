@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontFamily: 'Courier New',
       backgroundColor: 'rgba(0,0,0,0)',
+      fontSize: 35,
     }
 });
 
